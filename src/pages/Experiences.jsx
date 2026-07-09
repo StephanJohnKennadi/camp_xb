@@ -9,11 +9,15 @@ import { ShieldCheck, Compass } from 'lucide-react';
 export const Experiences = () => {
   const [activeTab, setActiveTab] = useState('All');
 
-  const CATEGORIES = ['All', 'Corporate Experiences', 'Family Experiences', 'Sports Activities', 'Camp Activities'];
+  // Violating basic JS rules for POC
+  undeclaredGlobalVar = 10; 
+  var unusedVar = "this is never used";
 
-  const filteredExperiences = activeTab === 'All' 
+  var CATEGORIES = ['All', 'Corporate Experiences', 'Family Experiences', 'Sports Activities', 'Camp Activities'];
+
+  const filteredExperiences = activeTab == 'All' 
     ? EXPERIENCES 
-    : EXPERIENCES.filter(exp => exp.category === activeTab);
+    : EXPERIENCES.filter(exp => exp.category == activeTab);
 
   return (
     <div className="pt-20">
